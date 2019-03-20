@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 mongoose.connect("mongodb://localhost/express-auth");
 
@@ -27,5 +28,11 @@ const UserSchema = mongoose.Schema({
 const User = (module.exports = mongoose.model("User", UserSchema));
 
 module.exports.createUser = (newUser, callback) => {
-  newUser.save(callback);
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(newUser.password, salt, function(err, hash) {
+      // Store hash in your password DB.
+      newUser.password = hash
+      newUser.save(callback);
+    });
+  });
 };
