@@ -2,27 +2,28 @@
   "name": "express-auth",
   "version": "0.0.1",
   "author": "dm-v",
-  "description":"Node server on Express, with authentication.",
+  "description": "Node server on Express, with authentication.",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "connect-flash": "*",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "express-messages": "*",
+    "express-session": "^1.15.6",
+    "express-validator": "*",
     "http-errors": "~1.6.2",
-    "morgan": "~1.9.0",
-    "node-sass-middleware": "0.11.0",
-    "pug": "2.0.0-beta11",
     "mongodb": "*",
     "mongoose": "*",
-    "connect-flash": "*",
-    "express-messages": "*",
-    "express-validator": "*",
+    "morgan": "~1.9.0",
+    "multer": "*",
+    "node-sass-middleware": "0.11.0",
     "passport": "*",
-    "passport-local": "*",
     "passport-http": "*",
-    "multer": "*"
+    "passport-local": "*",
+    "pug": "2.0.0-beta11"
   }
 }
