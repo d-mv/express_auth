@@ -25,7 +25,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
 // handle file uploads
-// app.use(multer({ dest: "./uploads" }));
+// app.use(upload);
 
 app.use(logger("dev"));
 app.use(express.json());
