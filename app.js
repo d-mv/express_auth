@@ -6,12 +6,12 @@ const logger = require("morgan");
 const sassMiddleware = require("node-sass-middleware");
 const session = require("express-session");
 const passport = require("passport");
-const expressValidator = require('express-validator')
 const LocalStrategy = require("passport-local").Strategy;
+const expressValidator = require("express-validator");
 const multer = require("multer");
-const upload = multer({dest: './uploads'})
+const upload = multer({ dest: "./uploads" });
 const flash = require("connect-flash");
-const bcrypt = require('bcryptjs')
+const bcrypt = require("bcryptjs");
 const mongo = require("mongodb");
 const mongoose = require("mongoose");
 const db = mongoose.connection;
@@ -24,9 +24,6 @@ const app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
-
-// handle file uploads
-// app.use(upload);
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -73,10 +70,15 @@ app.use(
     }
   })
 );
-// handle messages
+// handle messages, create globals
 app.use(require("connect-flash")());
 app.use((req, res, next) => {
   res.locals.messages = require("express-messages")(req, res);
+  next();
+});
+
+app.get("*", (req, res, next) => {
+  res.locals.user = req.user || null;
   next();
 });
 

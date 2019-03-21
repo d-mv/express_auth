@@ -4,6 +4,10 @@ ul.success li {
   border: 1px solid transparent;
   border-radius: 4px;
   list-style: none;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  list-style: none;
 }
 
 ul.error li {
@@ -14,6 +18,14 @@ ul.error li {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  height: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
