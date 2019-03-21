@@ -1,6 +1,6 @@
 {
   "name": "express-auth",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "dm-v",
   "description": "Node server on Express, with authentication.",
   "private": true,
